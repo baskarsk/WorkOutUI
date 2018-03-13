@@ -1,0 +1,15 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~open-iconic/font/css/open-iconic-bootstrap.css';
+
+.workoutlist-color {
+    color: #fff;
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+.bdr{
+    border-color:#4CAF50;
+}
+.lnk
+{
+    color: #4CAF50;
+}

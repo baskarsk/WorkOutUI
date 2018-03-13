@@ -1,0 +1,38 @@
+ 
+     <a href="#!/login" class="btn btn-link lnk">Logout</a>
+    <div class="container">
+  <div class="jumbotron">
+  </div>
+<div class="panel panel-primary bdr">
+    <div class="panel-heading workoutlist-color "> 
+  <h2>Transactions</h2>
+    </div>  
+    <div class="panel-body">
+        <div class="container">
+  <div class="table-responsive">     
+  <table  class="table table-hover">
+    <thead>
+      <tr>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Duration</th>
+        <th>Calories Burnt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let workoutTxn of workoutTxnList; let i = index" [class.active]="i == selectedRow">
+        <td>{{workoutTxn[1].toString().split(',').join(":")}}</td>
+        <td>{{workoutTxn[2].toString().split(',').join(":")}}</td>
+        <td>{{workoutTxn[3]}}</td>
+        <td>{{workoutTxn[4]}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="form-actions">
+    <button class="btn btn-info workoutlist-color " (click)="redirect()">Add</button>
+    <button class="btn btn-info workoutlist-color " (click)="backRedirect()">Back</button>
+   </div>
+</div>
+    </div>
+    </div>
