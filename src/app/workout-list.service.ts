@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from './structure/user';
 import { BaseurlService } from './baseurl.service';
 
 @Injectable()
-export class RegisterService {
-  private registerUrl : string;
+export class WorkoutListService {
+
+  private getWorkoutListUrl : string;
   constructor(
     private http: HttpClient,
     private urlProv: BaseurlService
   ) { 
-    this.registerUrl = urlProv.getCompleteServiceUrl("user/register");
+     this.getWorkoutListUrl = urlProv.getCompleteServiceUrl("workout");
   }
-  
-  register(user: any): Observable<any>{
-    return this.http.post<any>(this.registerUrl, user);
+
+  getWorkoutList(userId: Number): Observable<any>{
+    return this.http.get<any>(this.getWorkoutListUrl+"/"+userId);
   }
+
 }
